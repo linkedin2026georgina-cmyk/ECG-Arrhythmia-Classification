@@ -1,0 +1,24 @@
+# I am adding these rules to manage how search engines see my graduation project.
+# This file is important for SEO, even if the project is still in development.
+
+# First, I will allow the main famous bots to index the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# These bots are for social media previews (Twitter and Facebook)
+# I want the ECG charts to look good if I share the link
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Finally, I allow all other crawlers to access everything
+# Because this is a public graduation project about ECG classification
+User-agent: *
+Allow: /
+
+# Note for myself: If I add a sitemap later, I should put the link below.

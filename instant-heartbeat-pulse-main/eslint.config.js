@@ -1,0 +1,42 @@
+import js from "@eslint/js";
+import globals from "globals";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
+import tseslint from "typescript-eslint";
+
+/**
+ * ESLint configuration file.
+ * It defines code quality rules and basic React best practices.
+ */
+
+export default tseslint.config(
+  // Ignore build output and dependencies
+  { ignores: ["dist", "node_modules"] },
+  {
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+    },
+    plugins: {
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+    },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+
+      // Warn if components are not exported correctly for fast refresh
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true },
+      ],
+
+      // Show warnings for unused variables
+      "@typescript-eslint/no-unused-vars": "warn",
+
+      // Allow use of 'any' when needed
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  }
+);

@@ -1,0 +1,41 @@
+/* Base design configuration for the application */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base background and text colors */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    /* Primary accent colors */
+    --primary: 348 83% 47%;
+    --primary-glow: 348 83% 60%;
+
+    /* Status colors used in the interface */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+
+    /* Default border radius */
+    --radius: 1rem;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-400 font-extrabold;
+  }
+}
+
+/* Heartbeat-style animation for UI elements */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  10% { transform: scale(1.12); }
+  20% { transform: scale(1); }
+  30% { transform: scale(1.08); }
+  60% { transform: scale(1); }
+}
