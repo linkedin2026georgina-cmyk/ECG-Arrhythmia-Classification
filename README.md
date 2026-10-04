@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Comparative Analysis of Machine Learning and Deep Learning Approaches for ECG Arrhythmia Classification
 
 **University of the West of England (UWE Bristol)**  
@@ -125,3 +126,6 @@ Install frontend dependencies using:
 npm install
 
 
+=======
+# ECG-Arrhythmia-Classification
+>>>>>>> 6fccdd4d32eac44ccb6b47f8374bb0f55e295966
